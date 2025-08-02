@@ -35,7 +35,7 @@ function Homepage() {
                     </h1>
                 </div>
                 <div className="sm:text-left">
-                    <div className="text-[3rem] font-amita">Hey,</div>
+                    <div className="text-[3rem] font-amita">Hello,</div>
                     <div className="text-[3rem] font-amita">This is <span className="text-orange-500 ">Sahith</span></div>
                     <div className="text-[3rem] font-amita">Into Tech? </div>
                     <Dropdown />
