@@ -1,24 +1,27 @@
-import React, { useEffect, useMemo, useState } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  CartesianGrid,
-} from "recharts";
-import { format, fromUnixTime } from "date-fns";
+import { useEffect, useMemo, useState } from "react";
+// import {
+//   LineChart,
+//   Line,
+//   XAxis,
+//   YAxis,
+//   Tooltip,
+//   ResponsiveContainer,
+//   CartesianGrid,
+// } from "recharts";
+import { format } from "date-fns";
 import { FaSearch, FaMapMarkerAlt, FaStar, FaRegStar, FaTrash } from "react-icons/fa";
 // Utility: Convert AQI to approximate cigarette equivalent
-const getCigaretteEquivalent = (aqi: number): number => {
+const getCigaretteEquivalent = (aqi: number | null): number => {
+  if (aqi === null) return 0;       // Handle null safely
+
   if (aqi <= 50) return 0;          // Good
   if (aqi <= 100) return 2;         // Moderate
   if (aqi <= 200) return 5;         // Unhealthy
   if (aqi <= 300) return 8;         // Very Unhealthy
-  if (aqi <= 400) return 13;         // Very Unhealthy
+  if (aqi <= 400) return 13;        // Very Unhealthy
   return 13;                         // Hazardous
 };
+
 
 type Pollutants = {
   pm25?: number;
@@ -37,7 +40,7 @@ type ForecastDay = {
   aqi?: number | null;
 };
 
-const API_KEY = import.meta.env.VITE_WAQI_API_KEY ?? "50ea8278f60975d859e0143bec4fd4ea7dc5a9c6";
+const API_KEY = "50ea8278f60975d859e0143bec4fd4ea7dc5a9c6";
 // (You can replace API_KEY above or set VITE_WAQI_API_KEY in .env)
 
 const STORAGE_KEY = "aqi_favorites_v1";

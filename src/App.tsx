@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Contact from "./components/pages/Contact";
-import Navbar from "./components/justComponents/Navbar";
-import Homepage from "./components/pages/Homepage";
-import Footer from "./components/justComponents/Footer";
+// import Navbar from "./components/justComponents/Navbar";
+// import Homepage from "./components/pages/Homepage";
+// import Footer from "./components/justComponents/Footer";
 import AboutUs from "./components/pages/About";
 import Chat from "./components/pages/Chat/Chat";
 import Pagenotfound from "./components/pages/Pagenotfound";
@@ -24,7 +24,7 @@ const App = () => {
       <Routes>
         <Route path="/contact" element={<Contact />} />
         {/* <Route path="/" element={<Homepage />} /> */}
-        <Route path="/" element={<Aqi/>} />
+        <Route path="/" element={<Aqi />} />
         <Route path="*" element={<Pagenotfound />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/chat" element={<Chat />} />
