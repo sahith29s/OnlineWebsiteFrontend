@@ -11,18 +11,20 @@ import Login from "./components/auth/Login";
 import TicTacToe from "./components/pages/TicTacToe/TicTacToe";
 import AmazonCloHomepage from "./components/pages/AmazonClone/AmazonCloHomepage";
 import Calculator from "./components/pages/Calculator/Calculator";
+import Aqi from "./components/pages/Aqi";
 
 const App = () => {
   return (
     <>
-      <div className="bg-red-700 flex items-center text-center text-white font-xl h-9 justify-center">
+      {/* <div className="bg-red-700 flex items-center text-center text-white font-xl h-9 justify-center">
         Website under construction
-      </div>
+      </div> */}
 
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/contact" element={<Contact />} />
-        <Route path="/" element={<Homepage />} />
+        {/* <Route path="/" element={<Homepage />} /> */}
+        <Route path="/" element={<Aqi/>} />
         <Route path="*" element={<Pagenotfound />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/chat" element={<Chat />} />
@@ -33,7 +35,7 @@ const App = () => {
         <Route path="/calculator" element={<Calculator />} />
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
